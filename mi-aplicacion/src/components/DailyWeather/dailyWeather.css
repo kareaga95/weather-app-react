@@ -1,0 +1,30 @@
+/* Pronóstico diario */
+.daily-weather {
+    margin-top: 20px;
+  }
+  
+  .daily-weather h3 {
+    color: #ffb74d;
+  }
+  
+  [class^="day-card-"]  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .day-card img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .day-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ddd;
+  }
+  

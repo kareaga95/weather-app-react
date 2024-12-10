@@ -1,0 +1,54 @@
+/* Estilo para el contenedor principal */
+.location-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border-radius: 8px;
+  }
+  
+  /* Estilo del input de búsqueda */
+  .location-search input {
+    padding: 10px;
+    width: 250px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .location-search input::placeholder {
+    color: #bbb;
+  }
+  
+  .location-search input:focus {
+    border: 1px solid #ffb74d; /* Resaltado al enfocar */
+  }
+  
+  /* Botón de búsqueda */
+  .searchButton {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #ffb74d; /* Color destacado */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .searchButton:hover {
+    background-color: #ffa726;
+    transform: scale(1.05);
+  }
+  
+  .searchButton:active {
+    background-color: #f57c00;
+  }
+  

@@ -1,0 +1,29 @@
+/* Clima actual */
+.current-weather {
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .current-weather img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .current-weather h1 {
+    font-size: 6rem;
+    font-family: 'Courier New', Times, serif;
+    margin: 0;
+  }
+  
+  .current-weather h2 {
+    font-size: 2rem;
+    font-family: 'Courier New', Times, serif;
+    margin: 20;
+  }
+  
+  .current-weather p {
+    margin: 10px 0;
+    color: #bbb;
+  }
+  

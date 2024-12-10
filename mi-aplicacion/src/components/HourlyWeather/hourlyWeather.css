@@ -1,0 +1,36 @@
+/* Pronóstico por horas */
+.hourly-weather {
+    margin-top: 20px;
+  }
+  
+  .hourly-weather h3 {
+    color: #ffb74d;
+    margin-bottom: 10px;
+  }
+  
+  .hours {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+  }
+  
+  .hour-card {
+    text-align: center;
+    background-color: #2c2c2c;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 80px;
+    margin-right: 10px;
+  }
+  
+  .hour-card img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hour-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
