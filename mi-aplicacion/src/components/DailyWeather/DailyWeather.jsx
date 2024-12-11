@@ -4,9 +4,9 @@ import React, { useState } from "react";
 export const DailyWeather = ({ weather }) => {
     const [selected, setSelected] = useState(null);
 
-    const handleDivClick = (index) => {
-        setSelected(index); // Guarda el índice del div clicado
-        console.log("Selected Day: ", index);
+    const handleDivClick = (index, day) => {
+        setSelected(index);
+        console.log("Selected Day: ", index, day);
     };
 
     return (
@@ -16,7 +16,7 @@ export const DailyWeather = ({ weather }) => {
                 <div
                     key={index}
                     className={`day-card-${index} ${selected === index ? "selected" : ""}`}
-                    onClick={() => handleDivClick(index)} // Llamar a la función al hacer clic
+                    onClick={() => handleDivClick(index, day)} // Llamar a la función al hacer clic
                 >
                     <p>{day.date}</p>
                     <img src={day.day.condition.icon} alt="icon" />
