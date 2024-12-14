@@ -1,4 +1,4 @@
-import { appKey } from "./apiKey.jsx";
+import { appKey } from "../apiKey.jsx";
 const url = "http://api.weatherapi.com/v1";
 
  const getCurrentWeather = async (location) => {

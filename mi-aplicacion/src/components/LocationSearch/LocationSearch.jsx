@@ -1,4 +1,4 @@
-import './locationSearch.css';
+
 
 export const LocationSearch = ({location, setLocation, handleSearch}) =>{
     return(

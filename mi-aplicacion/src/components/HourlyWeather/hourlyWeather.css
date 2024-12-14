@@ -1,36 +1,64 @@
 /* Pronóstico por horas */
 .hourly-weather {
-    margin-top: 20px;
-  }
-  
-  .hourly-weather h3 {
-    color: #ffb74d;
-    margin-bottom: 10px;
-  }
-  
-  .hours {
-    display: flex;
-    justify-content: space-between;
-    overflow-x: auto;
-  }
-  
-  .hour-card {
-    text-align: center;
-    background-color: #2c2c2c;
-    padding: 10px;
-    border-radius: 5px;
-    min-width: 80px;
-    margin-right: 10px;
-  }
-  
-  .hour-card img {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .hour-card p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #ddd;
-  }
-  
+  margin-top: 20px;
+}
+
+.hourly-weather h3 {
+  color: #ffb74d;
+  margin-bottom: 10px;
+}
+
+/* Contenedor con scroll horizontal */
+.hours {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto; /* Scroll horizontal */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+  white-space: nowrap; /* Evita saltos de línea */
+  gap: 10px; /* Espacio entre tarjetas */
+}
+
+/* Personalización del scroll horizontal */
+.hours::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra */
+}
+
+.hours::-webkit-scrollbar-track {
+  background-color: #444; /* Color de la pista */
+  border-radius: 10px;
+}
+
+.hours::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del pulgar */
+  border-radius: 10px;
+}
+
+.hours::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cambio de color al pasar el ratón */
+}
+
+.hours::-webkit-scrollbar-button {
+  display: none; /* Ocultar botones de scroll */
+}
+
+/* Tarjeta de pronóstico por hora */
+.hour-card {
+  text-align: center;
+  background-color: #2c2c2c;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 80px;
+  margin-right: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hour-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.hour-card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+}

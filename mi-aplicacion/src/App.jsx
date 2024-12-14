@@ -3,10 +3,12 @@ import "./App.css";
 import { CurrentWeather } from "./components/CurrentWeather/CurrentWeather";
 import { HourlyWeather } from "./components/HourlyWeather/HourlyWeather";
 import { DailyWeather } from "./components/DailyWeather/DailyWeather";
+import { Header } from "./components/Header/Header";
 import { LocationSearch } from "./components/LocationSearch/LocationSearch";
+import {getNews} from "./js/apiNews/apiNews";
 import {getSportsData} from "./js/apiSport/apiSport";
 import functions from "./js/apiWeather/apiWeather";
-import { Header } from "./components/Header/Header";
+
 
 
 const App = () => {
@@ -16,6 +18,7 @@ const App = () => {
     const [dailyWeather, setDailyWeather] = useState(null);
     const [selectedDay, setSelectedDay] = useState(null); // Estado para guardar el día seleccionado
     const [toDaySport, setTodaySport] = useState(null);
+    const [toDayNews, setTodayNews] = useState(null);
 
     // Función que llama a la API
     const handleSearch = async () => {
@@ -23,9 +26,9 @@ const App = () => {
             const currentWeather = await functions.getCurrentWeather(location);
             const hourlyWeatherResponse = await functions.getHourlyWeather(location);
             const dailyWeatherResponse = await functions.getDailyWeather(location);
-            
             const toDaySport = await getSportsData(location);
-            console.log("TODAYSPORT: ", toDaySport);
+            const toDayNews = await getNews();
+            console.log("toDayNews: ", toDayNews);
 
             const hourlyWeather = hourlyWeatherResponse.forecast.forecastday[0].hour;
             const dailyWeather = dailyWeatherResponse.forecast.forecastday;
@@ -35,6 +38,7 @@ const App = () => {
             setCurrentWeather(currentWeather); // Guarda los datos en el estado
             setHourlyWeather(hourlyWeather);
             setDailyWeather(dailyWeather); // Guarda los datos en el estado
+            setTodayNews(toDayNews); // Guarda los datos en el estado
         } catch (error) {
             console.error("Error al obtener el clima:", error);
         }
@@ -42,16 +46,16 @@ const App = () => {
 
     return (
         <div className="app">
-            <Header />
+            <Header location={location} setLocation={setLocation} handleSearch={handleSearch}/>
             {/* Busqueda */}
-            <LocationSearch location={location} setLocation={setLocation} handleSearch={handleSearch} />
 
             {/* Datos ciudad buscada */}
-            {currentWeather && <CurrentWeather weather={currentWeather} sport={toDaySport}/>}
+            {currentWeather && <CurrentWeather weather={currentWeather} sport={toDaySport} news={toDayNews}/>}
 
             {hourlyWeather && <HourlyWeather weather={hourlyWeather} />}
 
             {dailyWeather && <DailyWeather weather={dailyWeather} onDaySelect={setSelectedDay} />}
+            
         </div>
     );
 };

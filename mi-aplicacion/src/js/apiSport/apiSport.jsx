@@ -1,4 +1,4 @@
-import { appKey } from "../apiWeather/apiKey";
+import { appKey } from "../apiKey";
 
 export const getSportsData = async (location) => {
     const url = `https://api.weatherapi.com/v1/sports.json?key=${appKey}&q=${location}`;
