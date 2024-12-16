@@ -65,5 +65,7 @@ La aplicación utiliza las siguientes APIs para consumir los datos:
     - Pronóstico diario: /current.json
     - Eventos deportivos por ciudad
 
+<img src="./mi-aplicacion/src/images/WEATHER.jpg" alt="Menu de transacciones" width="1000">
+
 2. **Mediastack (Noticias):** 
     - Noticias globales por país.
