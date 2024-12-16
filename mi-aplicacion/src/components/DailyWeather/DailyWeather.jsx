@@ -2,12 +2,7 @@ import './dailyWeather.css';
 import React, { useState } from "react";
 
 export const DailyWeather = ({ weather }) => {
-    const [selected, setSelected] = useState(null);
-
-    const handleDivClick = (index, day) => {
-        setSelected(index);
-        console.log("Selected Day: ", index, day);
-    };
+    console.log("DIA: " + weather[0])
 
     return (
         <div className="daily-weather">
@@ -15,13 +10,20 @@ export const DailyWeather = ({ weather }) => {
             {weather.map((day, index) => (
                 <div
                     key={index}
-                    className={`day-card-${index} ${selected === index ? "selected" : ""}`}
-                    onClick={() => handleDivClick(index, day)} // Llamar a la función al hacer clic
+                    className={`day-card-${index}`}
                 >
-                    <p>{day.date}</p>
+                    <p>
+                        {new Date(day.date)
+                            .toLocaleDateString('es-ES', { weekday: 'long' })
+                            .charAt(0)
+                            .toUpperCase() +
+                            new Date(day.date)
+                                .toLocaleDateString('es-ES', { weekday: 'long' })
+                                .slice(1)}
+                    </p>
                     <img src={day.day.condition.icon} alt="icon" />
                     <p>{day.day.avgtemp_c}°C</p>
-                    <p>{day.day.condition.text}</p>
+                    <p>{day.date}</p>
                 </div>
             ))}
         </div>

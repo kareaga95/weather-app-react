@@ -16,7 +16,6 @@ const App = () => {
     const [currentWeather, setCurrentWeather] = useState(null); // Estado para guardar el clima
     const [hourlyWeather, setHourlyWeather] = useState(null);
     const [dailyWeather, setDailyWeather] = useState(null);
-    const [selectedDay, setSelectedDay] = useState(null); // Estado para guardar el día seleccionado
     const [toDaySport, setTodaySport] = useState(null);
     const [toDayNews, setTodayNews] = useState(null);
 
@@ -28,17 +27,16 @@ const App = () => {
             const dailyWeatherResponse = await functions.getDailyWeather(location);
             const toDaySport = await getSportsData(location);
             const toDayNews = await getNews();
-            console.log("toDayNews: ", toDayNews);
 
             const hourlyWeather = hourlyWeatherResponse.forecast.forecastday[0].hour;
             const dailyWeather = dailyWeatherResponse.forecast.forecastday;
 
         // Agregamos el pronóstico deportivo al clima
             setTodaySport(toDaySport);
-            setCurrentWeather(currentWeather); // Guarda los datos en el estado
+            setCurrentWeather(currentWeather);
             setHourlyWeather(hourlyWeather);
-            setDailyWeather(dailyWeather); // Guarda los datos en el estado
-            setTodayNews(toDayNews); // Guarda los datos en el estado
+            setDailyWeather(dailyWeather);
+            setTodayNews(toDayNews);
         } catch (error) {
             console.error("Error al obtener el clima:", error);
         }
@@ -47,14 +45,12 @@ const App = () => {
     return (
         <div className="app">
             <Header location={location} setLocation={setLocation} handleSearch={handleSearch}/>
-            {/* Busqueda */}
-
-            {/* Datos ciudad buscada */}
+            
             {currentWeather && <CurrentWeather weather={currentWeather} sport={toDaySport} news={toDayNews}/>}
 
             {hourlyWeather && <HourlyWeather weather={hourlyWeather} />}
 
-            {dailyWeather && <DailyWeather weather={dailyWeather} onDaySelect={setSelectedDay} />}
+            {dailyWeather && <DailyWeather weather={dailyWeather}/>}
             
         </div>
     );

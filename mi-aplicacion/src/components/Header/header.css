@@ -1,62 +1,80 @@
-/* Estilo para el contenedor principal */
+/* Contenedor principal */
 .location-search {
-    display: flex;
-    justify-content:  space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #1e1e1e; /* Fondo oscuro */
-    flex-wrap: wrap; /* Permite que el contenido se ajuste si es necesario */
-  }
-  
-  .location-search h1 {
-    flex: 1; /* Ocupa todo el espacio a la izquierda */
-    text-align: left; /* Alinea el texto del h1 a la izquierda */
-    margin: 0; /* Elimina el margen por defecto */
-    color: #ffffff; /* Color del texto */
-    font-size: 2rem;
-  }
+  display: flex;
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  flex-wrap: wrap; /* Permite ajustar si es necesario */
+}
 
-  /* Estilo del input de búsqueda */
-  .location-search input {
-    padding: 10px;
-    width: 250px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #444;
-    border: 1px solid #666;
-    border-radius: 5px;
-    outline: none;
-    transition: border 0.3s ease;
-  }
-  
-  .location-search input::placeholder {
-    color: #bbb;
-  }
-  
-  .location-search input:focus {
-    border: 1px solid #ffb74d; /* Resaltado al enfocar */
-  }
-  
-  /* Botón de búsqueda */
-  .searchButton {
-    padding: 10px 15px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #ffb74d; /* Color destacado */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .searchButton:hover {
-    background-color: #ffa726;
-    transform: scale(1.05);
-  }
-  
-  .searchButton:active {
-    background-color: #f57c00;
-  }
-  
+/* Contenedor para el logo y el h1 */
+.logo-title-container {
+  display: flex;
+  align-items: center; /* Alinear verticalmente */
+  gap: 5px; /* Espacio pequeño entre logo y texto */
+}
+
+/* Estilo del logo */
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+/* Estilo del h1 */
+.location-search h1 {
+  text-align: left;
+  margin: 0;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/* Estilo del input */
+.location-search input {
+  padding: 10px;
+  width: 250px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #444;
+  border: 1px solid #666;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.location-search input::placeholder {
+  color: #bbb;
+}
+
+.location-search input:focus {
+  border: 1px solid #ffb74d;
+}
+
+/* Botón de búsqueda */
+.searchButton {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #ffb74d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: #ffa726;
+  transform: scale(1.05);
+}
+
+.searchButton:active {
+  background-color: #f57c00;
+}
+
+.search-container{
+  display: flex;
+  align-items: center; /* Alinear verticalmente */
+  gap: 10px; /* Espacio pequeño entre logo y texto */
+}
